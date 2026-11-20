@@ -1,41 +1,59 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./components/Home";
-import Products from "./components/Products";
-import ProductDetail from "./components/ProductDetail";
-import Jewelry from "./components/Jewelry";
-import Womensclothing from "./components/Womensclothing";
-import Mensclothing from "./components/Mensclothing";
-import Electronics from "./components/Electronics";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
+import ContactUs from "./pages/Contactus";
 
 function App() {
-  const [search, setSearch] = useState("");
-
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Layout
-            search={search}
-            setSearch={setSearch}
+    <div className="flex min-h-screen flex-col">
+
+      <Navbar />
+
+      <main className="flex-grow">
+        <Routes>
+
+          <Route path="/" element={<Home />} />
+
+          <Route path="/profile" element={<Profile />} />
+
+          <Route path="/products" element={<Products />} />
+
+          <Route
+            path="/products/:id"
+            element={<ProductDetails />}
           />
-        }
-      >
-        <Route index element={<Home />} />
-        <Route
-          path="products"
-          element={<Products search={search} />}
-        />
-       <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="jewelry" element={<Jewelry />} />
-        <Route path="Womensclothing" element={<Womensclothing />} />
-        <Route path="Mensclothing" element={<Mensclothing />} />
-        <Route path="Electronics" element={<Electronics />} />
-      </Route>
-    </Routes>
+
+          <Route path="/contactus" element={<ContactUs />} />
+
+          <Route
+            path="*"
+            element={
+              <div className="flex min-h-[60vh] flex-col items-center justify-center">
+                <h1 className="text-5xl font-bold text-green-950">
+                  404
+                </h1>
+                <p className="mt-4 text-gray-600">
+                  Page not found.
+                </p>
+              </div>
+            }
+          />
+
+        </Routes>
+      </main>
+
+      <Footer />
+
+    </div>
   );
 }
 
 export default App;
+
+
+
+

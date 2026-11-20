@@ -1,16 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
-function Layout({ search, setSearch }) {
+function Layout() {
   return (
     <>
-      <Navbar
-        search={search}
-        setSearch={setSearch}
-      />
+      <Navbar/>
       <Outlet />
-    </>
+      
+   </>
   );
 }
 
