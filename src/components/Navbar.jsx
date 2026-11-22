@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { products } from "../data/products";
+import { products } from "../data/Products";
 
 function Navbar() {
   const [productsOpen, setProductsOpen] = useState(false);

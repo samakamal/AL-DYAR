@@ -1,10 +1,9 @@
-
 export const products = [
   {
     id: "recycle-plastic",
     name: "(PP) Recycled Plastic",
     shortName: "Recycled Plastic",
-    image: "/images/recycled-plastic.jpg",
+    image: "public/images/recycled-plastic.jpg",
     details:
       "Quality recycled plastic materials designed for industrial applications and sustainable manufacturing. Our recycled plastic supports resource efficiency and more sustainable production.",
     features: [
@@ -21,7 +20,7 @@ export const products = [
     id: "plastic-pails",
     name: "Plastic Pails",
     shortName: "Plastic Pails",
-    image: "/images/plastic-pails.jpg",
+    image: "public/images/plastic-pails.jpg",
     details:
       "Durable plastic pails designed for storage, packaging, and industrial applications.",
     features: [
@@ -38,7 +37,7 @@ export const products = [
     id: "pe-film",
     name: "PE Film",
     shortName: "PE Film",
-    image: "/images/pe-film.jpg",
+    image: "public/images/pe-film.jpg",
     details:
       "Polyethylene film materials suitable for packaging and various industrial applications.",
     features: [
@@ -55,7 +54,7 @@ export const products = [
     id: "geomembrane",
     name: "Geomembrane",
     shortName: "Geomembrane",
-    image: "/images/geomembrane.jpg",
+    image: "public/images/geomembrane.jpg",
     details:
       "Geomembrane solutions designed for lining, containment, and waterproofing applications.",
     features: [

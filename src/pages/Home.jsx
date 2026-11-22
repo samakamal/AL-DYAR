@@ -1,6 +1,6 @@
-
+import { products } from "../data/Products";
 import { Link } from "react-router-dom";
-import { products } from "../data/products";
+
 
 function Home() {
   return (
