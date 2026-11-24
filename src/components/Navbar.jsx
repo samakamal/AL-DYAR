@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { products } from "../data/Products";
+import { products } from "../data/product";
 
 function Navbar() {
   const [productsOpen, setProductsOpen] = useState(false);
@@ -25,7 +25,7 @@ function Navbar() {
         {/* LOGO */}
         <Link to="/" onClick={closeMobile} className="flex min-w-0 items-center gap-2">
           <img
-            src="/images/logoo-128x93.png"
+            src="/iamges/logoo-128x93 (1).png"
             alt="AL-DYAR Logo"
             className="h-10 w-auto shrink-0 object-contain sm:h-12"
           />

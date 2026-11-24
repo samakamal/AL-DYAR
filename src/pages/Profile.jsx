@@ -1,7 +1,6 @@
 
 import { Link } from "react-router-dom";
 
-
 function Profile() {
   return (
     <main className="overflow-hidden bg-white">

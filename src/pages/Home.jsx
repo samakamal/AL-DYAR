@@ -1,4 +1,4 @@
-import { products } from "../data/Products";
+import { products } from "../data/product";
 import { Link } from "react-router-dom";
 
 
@@ -27,7 +27,7 @@ function Home() {
 
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap md:justify-start md:mt-9">
               <Link
-                to="/products"
+                to="/product"
                 className="rounded-full bg-green-800 px-7 py-3.5 text-center font-semibold text-white transition hover:bg-green-950 sm:px-8 sm:py-4"
               >
                 Explore Products →
@@ -43,14 +43,14 @@ function Home() {
           </div>
 
           <div className="mt-3 md:mt-0">
-            <img
-              src="/images/recycling-hero.jpg.png"
-              alt="Plastic recycling and industrial production"
-              className="h-56 w-full rounded-2xl object-cover shadow-xl sm:h-80 md:h-[480px] md:rounded-3xl"
-            />
-          </div>
-
-        </div>
+           <img
+            src="/iamges/wallpaper.jpg.png"
+            alt="Recycling the planet"
+           className="w-full h-full object-cover"
+/>
+              </div>
+              </div>
+       
       </section>
 
       {/* INTRODUCTION */}
@@ -58,10 +58,10 @@ function Home() {
         <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
 
           <img
-            src="public/images/factory.jpg"
+            src="/iamges/industrial.jpg.png"
             alt="Industrial plastic production"
             className="h-60 w-full rounded-2xl object-cover shadow-lg sm:h-80 md:h-[350px]"
-          />
+/>
 
           <div className="text-center md:text-left">
             <p className="text-xs font-bold uppercase tracking-widest text-green-700 sm:text-sm">
@@ -144,7 +144,7 @@ function Home() {
 
           <div className="mt-9 text-center sm:mt-12">
             <Link
-              to="/products"
+              to="/product"
               className="inline-block rounded-full bg-green-800 px-8 py-3.5 font-bold text-white transition hover:bg-green-950 sm:px-9 sm:py-4"
             >
               View All Products
