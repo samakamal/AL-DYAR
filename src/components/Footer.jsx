@@ -15,7 +15,7 @@ function Footer() {
             className="flex w-fit items-center gap-3"
           >
             <img
-              src="/images/logoo-128x93.png"
+              src="/iamges/logoo-128x93 (1).png"
               alt="AL-DYAR Logo"
               className="h-12 w-auto rounded bg-white object-contain sm:h-14"
             />
