@@ -10,23 +10,17 @@ import ContactUs from "./pages/Contactus";
 function App() {
   return (
     <div className="flex min-h-screen flex-col">
-
       <Navbar />
 
       <main className="flex-grow">
         <Routes>
-
           <Route path="/" element={<Home />} />
-
           <Route path="/profile" element={<Profile />} />
-
           <Route path="/products" element={<Products />} />
-
           <Route
             path="/products/:id"
             element={<ProductDetails />}
           />
-
           <Route path="/contactus" element={<ContactUs />} />
 
           <Route
@@ -42,18 +36,12 @@ function App() {
               </div>
             }
           />
-
         </Routes>
       </main>
 
       <Footer />
-
     </div>
   );
 }
 
 export default App;
-
-
-
-

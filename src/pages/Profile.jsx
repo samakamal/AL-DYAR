@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 function Profile() {
@@ -26,7 +25,7 @@ function Profile() {
       {/* COMPANY INTRODUCTION */}
       <section className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-2 md:gap-10 lg:gap-12 lg:py-20">
 
-        <div className="min-w-0">
+        <div className="min-w-0 bg-white dark:bg-gray-950">
 
           <p className="text-xs font-bold uppercase tracking-widest text-green-700 sm:text-sm">
             About Our Company
@@ -59,9 +58,9 @@ function Profile() {
         </div>
 
         {/* COMPANY IMAGE */}
-        <div className="w-full overflow-hidden rounded-2xl shadow-xl sm:rounded-3xl">
+        <div className="w-full bg-white dark:bg-gray-950 overflow-hidden rounded-2xl shadow-xl sm:rounded-3xl">
           <img
-            src="public/images/factory.jpg"
+            src="/iamges/industrial.jpg.png"
             alt="AL-DYAR industrial production"
             loading="lazy"
             className="h-64 w-full object-cover sm:h-80 md:h-[350px] lg:h-[400px]"
@@ -75,7 +74,7 @@ function Profile() {
 
         <div className="mx-auto max-w-7xl">
 
-          <div className="mb-9 text-center sm:mb-12">
+          <div className="mb-9 bg-white dark:bg-gray-950 text-center sm:mb-12">
 
             <p className="text-xs font-bold uppercase tracking-widest text-green-700 sm:text-sm">
               Our Direction
@@ -87,12 +86,12 @@ function Profile() {
 
           </div>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+          <div className="grid gap-6 bg-white dark:bg-gray-950 sm:gap-8 md:grid-cols-2">
 
             {/* MISSION */}
-            <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 md:p-10">
+            <div className="rounded-2xl  dark:bg-gray-950 bg-white p-6 shadow-sm sm:p-8 md:p-10">
 
-              <div className="text-3xl text-green-700 sm:text-4xl">
+              <div className="text-3xl bg-white dark:bg-gray-950 text-green-700 sm:text-4xl">
                 ◎
               </div>
 
@@ -109,9 +108,9 @@ function Profile() {
             </div>
 
             {/* VISION */}
-            <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 md:p-10">
+            <div className="rounded-2xl  dark:bg-gray-950 bg-white p-6 shadow-sm sm:p-8 md:p-10">
 
-              <div className="text-3xl text-green-700 sm:text-4xl">
+              <div className="text-3xl bg-white dark:bg-gray-950 text-green-700 sm:text-4xl">
                 ♻
               </div>
 
@@ -135,7 +134,7 @@ function Profile() {
       {/* OUR VALUES */}
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:py-20">
 
-        <div className="text-center">
+        <div className="text-center bg-white dark:bg-gray-950">
 
           <p className="text-xs font-bold uppercase tracking-widest text-green-700 sm:text-sm">
             What Matters to Us
@@ -147,7 +146,7 @@ function Profile() {
 
         </div>
 
-        <div className="mt-9 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-7 lg:grid-cols-4">
+        <div className="mt-9 grid gap-5 sm:mt-12 sm:grid-cols-2  bg-white dark:bg-gray-950 sm:gap-7 lg:grid-cols-4">
 
           {[
             ["01", "Quality", "We focus on dependable products and consistent standards."],
@@ -207,4 +206,3 @@ function Profile() {
 }
 
 export default Profile;
-

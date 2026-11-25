@@ -1,8 +1,18 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { products } from "../data/product";
 
 function ProductDetails() {
   const { id } = useParams();
+
+  // Automatically show the top of the product page
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [id]);
 
   // Find the product selected by the visitor
   const product = products.find(
@@ -13,7 +23,6 @@ function ProductDetails() {
   if (!product) {
     return (
       <main className="flex min-h-[70vh] flex-col items-center justify-center bg-white px-6 text-center">
-
         <h1 className="text-4xl font-extrabold text-green-950">
           Product Not Found
         </h1>
@@ -28,7 +37,6 @@ function ProductDetails() {
         >
           Back to Products
         </Link>
-
       </main>
     );
   }
@@ -38,7 +46,6 @@ function ProductDetails() {
 
       {/* PRODUCT PAGE HEADER */}
       <section className="bg-green-950 px-6 py-16 text-center text-white sm:py-20">
-
         <p className="font-bold uppercase tracking-widest text-green-300">
           AL-DYAR Product Collection
         </p>
@@ -50,27 +57,18 @@ function ProductDetails() {
         <p className="mx-auto mt-5 max-w-2xl leading-8 text-green-100">
           Discover our product quality, features, and industrial solutions.
         </p>
-
       </section>
 
       {/* BREADCRUMB */}
       <div className="mx-auto max-w-7xl px-6 pt-8">
-
         <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-
-          <Link
-            to="/"
-            className="hover:text-green-800"
-          >
+          <Link to="/" className="hover:text-green-800">
             Home
           </Link>
 
           <span>/</span>
 
-          <Link
-            to="/products"
-            className="hover:text-green-800"
-          >
+          <Link to="/products" className="hover:text-green-800">
             Products
           </Link>
 
@@ -79,30 +77,24 @@ function ProductDetails() {
           <span className="font-semibold text-green-900">
             {product.shortName}
           </span>
-
         </div>
-
       </div>
 
       {/* MAIN PRODUCT INFORMATION */}
       <section className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
-
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
           {/* PRODUCT IMAGE */}
           <div className="overflow-hidden rounded-3xl border border-green-100 bg-gray-50 shadow-lg">
-
             <img
               src={product.image}
               alt={product.name}
               className="h-72 w-full object-cover sm:h-96 lg:h-[480px]"
             />
-
           </div>
 
           {/* PRODUCT DESCRIPTION */}
           <div>
-
             <p className="text-sm font-bold uppercase tracking-widest text-green-700">
               About Our Product
             </p>
@@ -116,30 +108,24 @@ function ProductDetails() {
             </p>
 
             <div className="mt-8 border-t border-green-100 pt-7">
-
               <h3 className="text-xl font-bold text-green-950">
                 Product Features
               </h3>
 
               <ul className="mt-6 space-y-4">
-
                 {product.features.map((feature, index) => (
                   <li
                     key={index}
                     className="flex items-center gap-3 text-gray-700"
                   >
-
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-100 font-bold text-green-800">
                       ✓
                     </span>
 
                     <span>{feature}</span>
-
                   </li>
                 ))}
-
               </ul>
-
             </div>
 
             <Link
@@ -149,18 +135,13 @@ function ProductDetails() {
               Contact Us About This Product
               <span>→</span>
             </Link>
-
           </div>
-
         </div>
-
       </section>
 
       {/* WHY CHOOSE AL-DYAR */}
       <section className="bg-green-50 px-6 py-16 sm:py-20">
-
         <div className="mx-auto max-w-4xl text-center">
-
           <p className="font-bold uppercase tracking-widest text-green-700">
             AL-DYAR
           </p>
@@ -181,9 +162,7 @@ function ProductDetails() {
           >
             ← Back to All Products
           </Link>
-
         </div>
-
       </section>
 
     </main>

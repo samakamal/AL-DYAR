@@ -1,0 +1,470 @@
+
+/* =================================
+   HERO TEXT ANIMATIONS
+================================= */
+
+.hero-label {
+  opacity: 0;
+  animation: slideFromLeft 0.8s ease-out 0.2s forwards;
+}
+
+.hero-title {
+  opacity: 0;
+  animation: slideFromLeft 1s ease-out 0.4s forwards;
+}
+
+.hero-description {
+  opacity: 0;
+  animation: slideFromLeft 1s ease-out 0.7s forwards;
+}
+
+.hero-buttons {
+  opacity: 0;
+  animation: popUp 0.9s ease-out 1s forwards;
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================================
+   RECYCLING SCENE
+================================= */
+
+.hero-artwork {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: sceneEntrance 1.2s ease-out both;
+}
+
+.recycle-scene {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 600px;
+  min-height: 410px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 35px 20px;
+  border: 1px solid rgba(35, 112, 70, 0.13);
+  border-radius: 30px;
+  background: linear-gradient(
+    145deg,
+    #f5fcf6 0%,
+    #e0f2e5 55%,
+    #c9e8d3 100%
+  );
+  box-shadow: 0 25px 60px rgba(17, 75, 43, 0.12);
+}
+
+.scene-glow {
+  position: absolute;
+  z-index: -1;
+  width: 300px;
+  height: 300px;
+  top: 45px;
+  right: 10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(91, 181, 119, 0.22),
+    transparent 70%
+  );
+}
+
+.decor-circle {
+  position: absolute;
+  border: 1px solid rgba(35, 112, 70, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle-one {
+  width: 180px;
+  height: 180px;
+  top: 35px;
+  right: -70px;
+}
+
+.circle-two {
+  width: 120px;
+  height: 120px;
+  bottom: 30px;
+  left: -55px;
+}
+
+.scene-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #286342;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #36a766;
+  box-shadow: 0 0 0 5px rgba(54, 167, 102, 0.13);
+  animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+  50% {
+    box-shadow: 0 0 0 9px rgba(54, 167, 102, 0.03);
+  }
+}
+
+/* =================================
+   RECYCLING CYCLE
+================================= */
+
+.recycle-cycle {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.recycle-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  min-width: 0;
+}
+
+.stage-icon {
+  width: 115px;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(35, 112, 70, 0.12);
+  box-shadow: 0 12px 25px rgba(20, 80, 45, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.stage-icon:hover {
+  transform: translateY(-8px);
+}
+
+.bottle-icon svg {
+  width: 65px;
+  height: 110px;
+  animation: bottleMove 3s ease-in-out infinite;
+}
+
+.machine-icon svg {
+  width: 105px;
+  height: 100px;
+}
+
+.pellets-icon {
+  position: relative;
+}
+
+.stage-caption {
+  color: #20563a;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* =================================
+   MOVING ARROWS
+================================= */
+
+.cycle-arrow {
+  color: #29864e;
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: -25px;
+  animation: arrowPulse 1.5s ease-in-out infinite;
+}
+
+.arrow-two {
+  animation-delay: 0.5s;
+}
+
+@keyframes arrowPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateX(-3px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+}
+
+@keyframes bottleMove {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(3deg);
+  }
+}
+
+/* =================================
+   PELLET ANIMATION
+================================= */
+
+.pellet {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #8bd5a0,
+    #237747
+  );
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.13),
+    2px 3px 5px rgba(20, 80, 45, 0.15);
+  animation: pelletFloat 2s ease-in-out infinite;
+}
+
+.pellet-one {
+  top: 30px;
+  left: 30px;
+}
+
+.pellet-two {
+  top: 55px;
+  left: 60px;
+  animation-delay: 0.3s;
+}
+
+.pellet-three {
+  top: 80px;
+  left: 25px;
+  animation-delay: 0.5s;
+}
+
+.pellet-four {
+  top: 35px;
+  right: 25px;
+  animation-delay: 0.7s;
+}
+
+.pellet-five {
+  bottom: 27px;
+  right: 35px;
+  animation-delay: 0.2s;
+}
+
+.pellet-six {
+  bottom: 32px;
+  left: 55px;
+  animation-delay: 0.4s;
+}
+
+.pellet-seven {
+  top: 65px;
+  right: 20px;
+  animation-delay: 0.6s;
+}
+
+.pellet-eight {
+  bottom: 15px;
+  left: 30px;
+  animation-delay: 0.8s;
+}
+
+.pellet-nine {
+  top: 15px;
+  left: 65px;
+  animation-delay: 0.1s;
+}
+
+@keyframes pelletFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-7px) scale(1.08);
+  }
+}
+
+/* =================================
+   SCENE FOOTER
+================================= */
+
+.scene-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 35px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(35, 112, 70, 0.12);
+}
+
+.footer-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #176b43;
+  color: white;
+  font-size: 25px;
+}
+
+.scene-footer h3 {
+  color: #174c31;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.scene-footer p {
+  margin-top: 4px;
+  color: #66816f;
+  font-size: 11px;
+}
+
+/* =================================
+   ENTRANCE ANIMATION
+================================= */
+
+@keyframes sceneEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 767px) {
+  .recycle-scene {
+    max-width: 480px;
+    min-height: 350px;
+    padding: 25px 10px;
+    border-radius: 22px;
+  }
+
+  .scene-label {
+    font-size: 8px;
+    margin-bottom: 25px;
+  }
+
+  .stage-icon {
+    width: 90px;
+    height: 110px;
+  }
+
+  .bottle-icon svg {
+    width: 55px;
+    height: 90px;
+  }
+
+  .machine-icon svg {
+    width: 85px;
+    height: 85px;
+  }
+
+  .cycle-arrow {
+    font-size: 20px;
+  }
+
+  .stage-caption {
+    font-size: 7px;
+    letter-spacing: 0.7px;
+  }
+
+  .scene-footer {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 380px) {
+  .stage-icon {
+    width: 78px;
+    height: 95px;
+  }
+
+  .cycle-arrow {
+    font-size: 16px;
+  }
+
+  .pellet {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* =================================
+   REDUCED MOTION ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-label,
+  .hero-title,
+  .hero-description,
+  .hero-buttons,
+  .hero-artwork,
+  .bottle-icon svg,
+  .pellet,
+  .cycle-arrow,
+  .status-dot {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}

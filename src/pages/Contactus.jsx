@@ -20,14 +20,29 @@ function ContactUs() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const subject = encodeURIComponent(formData.subject);
+    // AL-DYAR WhatsApp number
+    const whatsappNumber = "201001787509";
 
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\n\n${formData.message}`
-    );
+    const message = `
+Hello AL-DYAR!
 
-    window.location.href =
-      `mailto:info@al-dyar.com?subject=${subject}&body=${body}`;
+I would like to contact your team.
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+    `;
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -71,7 +86,7 @@ function ContactUs() {
 
               <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-white sm:mb-8 sm:h-16 sm:w-16">
                 <img
-                  src="/images/logoo-128x93.png"
+                  src="/iamges/logoo-128x93 (1).png"
                   alt="AL-DYAR Logo"
                   className="h-11 w-11 object-contain sm:h-12 sm:w-12"
                 />
@@ -278,13 +293,12 @@ function ContactUs() {
                 type="submit"
                 className="flex w-full items-center justify-center gap-3 rounded-xl bg-green-800 px-6 py-4 font-bold text-white shadow-lg shadow-green-900/10 transition duration-300 hover:bg-green-950 hover:shadow-xl sm:w-auto sm:px-8"
               >
-                Send Message
+                Send via WhatsApp
                 <span>→</span>
               </button>
 
               <p className="text-xs leading-6 text-gray-400">
-                * Required fields. Your email application will open
-                when you submit this form.
+                Your message will be prepared in WhatsApp. Please press Send to submit it.
               </p>
 
             </form>
@@ -315,6 +329,3 @@ function ContactUs() {
 }
 
 export default ContactUs;
-
-
-

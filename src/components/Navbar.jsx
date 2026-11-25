@@ -9,7 +9,9 @@ function Navbar() {
 
   const linkStyle = ({ isActive }) =>
     `transition-colors hover:text-green-700 ${
-      isActive ? "font-bold text-green-800" : "text-gray-700"
+      isActive
+        ? "font-bold text-green-800"
+        : "text-gray-700"
     }`;
 
   const closeMobile = () => {
@@ -104,13 +106,15 @@ function Navbar() {
 
         </div>
 
-        {/* DESKTOP CONTACT BUTTON */}
-        <Link
-          to="/contactus"
-          className="hidden rounded-full bg-green-800 px-4 py-3 text-sm font-semibold text-white transition hover:bg-green-950 lg:block xl:px-5"
-        >
-          Get in Touch
-        </Link>
+        {/* DESKTOP ACTION */}
+        <div className="hidden lg:flex">
+          <Link
+            to="/contactus"
+            className="rounded-full bg-green-800 px-4 py-3 text-sm font-semibold text-white transition hover:bg-green-950 xl:px-5"
+          >
+            Get in Touch
+          </Link>
+        </div>
 
         {/* MOBILE MENU BUTTON */}
         <button
@@ -203,4 +207,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
